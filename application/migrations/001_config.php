@@ -6,7 +6,8 @@ class Migration_config extends CI_Migration {
     $this->db->query("
       CREATE TABLE `user` (
         `uuid` varchar(255) NOT NULL,
-        `name` varchar(255) NOT NULL,
+		`name` varchar(255) NOT NULL,
+		`pekerjaan` varchar(64) NOT NULL,
         PRIMARY KEY (`uuid`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8
     ");

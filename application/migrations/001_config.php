@@ -7,6 +7,7 @@ class Migration_config extends CI_Migration {
       CREATE TABLE `user` (
         `uuid` varchar(255) NOT NULL,
         `name` varchar(255) NOT NULL,
+        `pekerjaan` varchar(255) NOT NULL,
         PRIMARY KEY (`uuid`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8
     ");

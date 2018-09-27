@@ -8,13 +8,16 @@ class Users extends MY_Model {
 
     $this->thead = array(
       (object) array('mData' => 'name', 'sTitle' => 'Name'),
+      (object) array('mData' => 'pekerjaan', 'sTitle' => 'Pekerjaan'),
     );
 
     $this->table = 'user';
 
     $this->form[]= array(
-      'name'    => 'name',
-      'label'   => 'Name',
+      'name'      => 'name',
+      'work'      => 'pekerjaan',
+      'label'     => 'Name',
+      'labelWork' => 'Pekerjaan',
     );
 
   }

@@ -22,6 +22,25 @@
         <?php tel_input($field['name'], $field['value'], $field['attr'])?>
     <?php endif ?>
   </div>
+  <label class="col-sm-3 control-label"><?= 'hidden' === $field['type'] ? '' : $field['labelWork'] ?></label>
+  <div class="col-sm-7">
+    <?php if(in_array($field['type'], array('text', 'hidden'))): ?>
+      <input class="form-control" type="<?= $field['type'] ?>" value="<?= $field['value'] ?>" name="<?= $field['work'] ?>" <?= $field['attr'] ?>>
+    <?php elseif('select' === $field['type']): ?>
+        <?php
+        if(preg_match('/(multiple)/', $field['attr']) > 0){
+            echo '<input type="hidden" name="'.str_replace('[]','',$field['work']).'">';
+        }
+        ?>
+      <select class="form-control" name="<?= $field['work'] ?>" <?= $field['attr'] ?>>
+        <?php foreach ($field['options'] as $opt): ?>
+        <option <?= $opt['value'] === $field['value'] || (is_array($field['value']) && in_array($opt['value'], $field['value'])) ? 'selected="selected"':'' ?> value="<?= $opt['value'] ?>"><?= $opt['text'] ?></option>
+        <?php endforeach ?>
+      </select>
+    <?php elseif('tel' === $field['type']):?>
+        <?php tel_input($field['name'], $field['value'], $field['attr'])?>
+    <?php endif ?>
+  </div>
 </div>
 <?php endforeach ?>
 

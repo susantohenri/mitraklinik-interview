@@ -6,7 +6,8 @@
   <label class="col-sm-3 control-label"><?= 'hidden' === $field['type'] ? '' : $field['label'] ?></label>
   <div class="col-sm-7">
     <?php if(in_array($field['type'], array('text', 'hidden'))): ?>
-      <input class="form-control" type="<?= $field['type'] ?>" value="<?= $field['value'] ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+      <input class="form-control" type="<?= $field['type'] ?>" placeholder='Nama Anda' value="<?= $field['value'] ?>" name="<?= $field['name'] ?>" <?= $field['attr'] ?>>
+      <input class="form-control" type="<?= $field['type'] ?>" placeholder='Pekerjaan Anda' value="<?= $field['value'] ?>" name="<?= $field['job'] ?>" <?= $field['attr'] ?>>
     <?php elseif('select' === $field['type']): ?>
         <?php
         if(preg_match('/(multiple)/', $field['attr']) > 0){

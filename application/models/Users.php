@@ -8,6 +8,7 @@ class Users extends MY_Model {
 
     $this->thead = array(
       (object) array('mData' => 'name', 'sTitle' => 'Name'),
+      (object) array('mData' => 'pekerjaan', 'sTitle' => 'Pekerjaan'),
     );
 
     $this->table = 'user';
@@ -15,6 +16,10 @@ class Users extends MY_Model {
     $this->form[]= array(
       'name'    => 'name',
       'label'   => 'Name',
+    );
+    $this->form[]= array(
+      'name'    => 'pekerjaan',
+      'label'   => 'Pekerjaan',
     );
 
   }
